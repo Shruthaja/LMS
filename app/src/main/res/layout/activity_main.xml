@@ -10,7 +10,7 @@
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="68dp"
         android:ems="10"
@@ -18,16 +18,16 @@
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.717" />
+        app:layout_constraintVertical_bias="0.571" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="87dp"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="33dp"
         android:layout_marginEnd="56dp"
-        android:text="Select Book to borrow"
+        android:text="Select Book to borrow and card No"
         app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,11 +35,11 @@
     <TextView
         android:id="@+id/textView4"
         android:layout_width="200dp"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="68dp"
         android:layout_marginBottom="475dp"
-        android:text="Add new Book to Library collection"
+        android:text="Add new Book to Library collection , please provide publisher name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName3"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +78,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="312dp"
         android:layout_marginBottom="395dp"
-        android:text="Button"
+        android:text="submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -149,4 +149,23 @@
         android:text="page2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="195dp"
+        tools:layout_editor_absoluteY="229dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
