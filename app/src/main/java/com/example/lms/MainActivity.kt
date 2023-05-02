@@ -1,15 +1,57 @@
 package com.example.lms
-
 import android.os.Bundle
+import android.os.StrictMode
+import android.os.StrictMode.ThreadPolicy
+import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.color.DynamicColors
+import java.net.HttpURLConnection
+import java.net.URL
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.lang.StringBuilder
 
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-System.out.println("hey");
-    }
-}
+        val policy = ThreadPolicy.Builder().permitAll().build()
+
+        StrictMode.setThreadPolicy(policy)
+        // get reference to button
+        val btnclickme = findViewById(R.id.button3) as Button
+        // set on-click listener
+        btnclickme.setOnClickListener {
+            val value=findViewById(R.id.textView6) as TextView
+            try {
+                // Create URL object
+                val url = URL("http://172.22.80.1/hello.php/resource")
+
+                // Create HTTP connection
+                val connection = url.openConnection() as HttpURLConnection
+                connection.requestMethod = "GET"
+
+                // Read response
+                val inStream = BufferedReader(InputStreamReader(connection.inputStream))
+                val response = StringBuilder()
+                var inputLine: String?
+                while (inStream.readLine().also { inputLine = it } != null) {
+                    response.append(inputLine)
+                }
+                inStream.close()
+
+                // Print response
+                value.setText(response.toString())
+
+            } catch (e: Exception) {
+                e.printStackTrace()}
+//            value.setText("Result")
+
+        }
+
+
+}}
+
+
 
